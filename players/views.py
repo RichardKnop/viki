@@ -12,13 +12,13 @@ class PlayersAPIView(View):
     def get(self, request, *args, **kwargs):
         return JsonResponse(PLAYERS_DATA, safe=False)
 
+
 class PlayersPageView(View):
 
     template_name = "players/players.html"
     strength_weight = 0
     dexterity_weight = 0
     intelligence_weight = 0
-
 
     def get(self, request, *args, **kwargs):
         return render_to_response(
