@@ -13,6 +13,14 @@ class PlayersAPIView(View):
         return JsonResponse(PLAYERS_DATA, safe=False)
 
 
+class PlayersJSPageView(View):
+
+    template_name = "players/players_js.html"
+
+    def get(self, request, *args, **kwargs):
+        return render_to_response(self.template_name, {})
+
+
 class PlayersPageView(View):
 
     template_name = "players/players.html"

@@ -101,3 +101,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
 )
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'viki', 'static'),
+    os.path.join(BASE_DIR, 'players', 'static'),
+)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
