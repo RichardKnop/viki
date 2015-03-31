@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Players</title>
+</head>
+<body>
+
+<h1>Players</h1>
+
+<form id="update-form" method="post" action="/pages/players">
+    {% csrf_token %}
+    <select name="strength_weight" id="str-weight">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select><br>
+
+    <select name="dexterity_weight" id="dex-weight">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select><br>
+
+    <select name="intelligence_weight" id="int-weight">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select><br>
+
+    <input type="submit" id="update" value="Update">
+</form>
+
+<br>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Job</th>
+            <th>str</th>
+            <th>dex</th>
+            <th>int</th>
+            <th>Point</th>
+        </tr>
+    </thead>
+    <tbody id="load-players-here">
+        {% for d in data %}
+        <tr>
+            <td>{{ d.name }}</td>
+            <td>{{ d.job }}</td>
+            <td>{{ d.str }}</td>
+            <td>{{ d.dex }}</td>
+            <td>{{ d.int }}</td>
+            <td>{{ d.point }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
