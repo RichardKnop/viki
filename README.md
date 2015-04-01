@@ -18,13 +18,13 @@ $ pip install -r requirements.txt
 Sync the database:
 
 ```
-$ python oauth2server/manage.py syncdb
+$ python manage.py syncdb
 ```
 
 Run the development server:
 
 ```
-$ python oauth2server/manage.py runserver
+$ python manage.py runserver
 ```
 
 You can now test the API:
